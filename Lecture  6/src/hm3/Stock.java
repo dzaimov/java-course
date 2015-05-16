@@ -13,4 +13,12 @@ public abstract class Stock {
 		this.available = available;
 	}
 	
+	public void Add(String Product){
+		Stock[] a = new Stock[10];
+		
+		}
+	public boolean isItAvailable(){
+		
+		return available;
+	}
 }
