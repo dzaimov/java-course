@@ -7,29 +7,24 @@ public class hm7 {
 		Scanner input = new Scanner(System.in, "UTF-8");
 		System.out.println("Enter number: ");
 		int a = input.nextInt();
+		StringBuilder Perm = new StringBuilder();
 		input.close();
-		
-		Permutation(a);
+		for(int i = 1; i <= a; i++){			
+			Perm.append(i);
+		}
+		Permutation("", Perm.toString());
 
 	}
 	
-	public static int  Permutation(int k) {
-		int[] array = new int[k];
-		int i = 0;
-		int temp = 0;
-		if(k == 0){
-			return Permutation(k + 1);
+	public static void Permutation(String str, String str1) {
+		if(str1.length() == 0){			
+			System.out.println(str);
 		}
-		else{
-			array[i] = temp;
-			array[i] = array[k];
-			array[k]= temp;
-			Permutation(k-1);
-			array[k] = temp;
-			array[k] = array[i];
-			array[i]= temp;
-			Permutation(k);
-			return Permutation(k-1);
+		else {
+			for(int i = 0; i < str1.length(); i++){			
+				Permutation(str + str1.charAt(i),
+				str1.substring(0, i) + str1.substring(i + 1));
+			}
 		}
 	}
 }
